@@ -25,6 +25,8 @@ engine = create_engine(URL(**DB_URI))
 base.prepare(engine, reflect=True)
 
 LosDetails = base.classes.customer_mapping
+AlliancePartner = base.classes.alliance_partner
+CustomerLoanMap = base.classes.customer_loan_mapping
 
 # Field Op data
 RetailerFieldOpMap = base.classes.retailer_fieldop_mapping

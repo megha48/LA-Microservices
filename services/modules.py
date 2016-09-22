@@ -301,7 +301,7 @@ def store_kyc(data):
 	customer_id = 'DLC344'
 	return aadhaar_verify_info(kyc_json,customer_id,aadhaar_no)
 
-def execute_rule1(retailer_code, edate):
+def execute_rule1(lid, edate):
 
 	# parsing the date
 	date_parts = edate.split('-')
@@ -310,7 +310,7 @@ def execute_rule1(retailer_code, edate):
 	month_name = month_map[str(date_parts[1])]
 	year = int(date_parts[0])
 
-	txn_data = session.query(TransactionData).filter(TransactionData.external_id==retailer_code).all()
+	txn_data = session.query(TransactionData).filter(TransactionData.customer_id == lid).all()
 	cnt_txn = 0
 	if year < 2016 or (month < 2 and year == 2016):
 		print "in old"
@@ -333,7 +333,7 @@ def execute_rule1(retailer_code, edate):
 			return True
 	return False
 
-def execute_rule2(rcode, edate):
+def execute_rule2(lid, edate):
 
 	# parsing the date
 	date_parts = edate.split('-')
@@ -341,7 +341,7 @@ def execute_rule2(rcode, edate):
 	month = int(date_parts[1])
 	year = int(date_parts[0])
 
-	sales_data = session.query(SalesData).filter(SalesData.external_id==rcode).all()
+	sales_data = session.query(SalesData).filter(SalesData.customer_id == lid).all()
 	sales_amount = 0
 	cnt_txn = 0
 	if year < 2016 or (month < 2 and year == 2016):
@@ -401,37 +401,24 @@ def execute_rule3(edate):
 			return True
 	return False
 
-# to be invoked once the loan has been disbursed to the customer
-def create_and_store_client(url_link, input_params):
-	# get request
-	# params = urllib.urlencode(input_params)
-	# url = url_link+"?"+params
-	# response = urllib2.urlopen(url)
-	# print response.info()
-
-	# post request
-	result = requests.get(url_link, data=input_params)
-	data = result.text
-	print data
-
 def rule_based_filtering(la_id):
-	check_id = session.query(exists().where(MISData.loansapp_id==la_id)).scalar()
+	check_id = session.query(exists().where(CustomerDetails.customer_id==la_id)).scalar()
 	if check_id:
-		retailer_code, enroll_date = session.query(MISData.external_id, MISData.enrollment_date).\
-			filter(MISData.loansapp_id==la_id).first()
+		enroll_date = session.query(CustomerDetails.partner_enrollment_date).\
+			filter(MISData.customer_id==la_id).first()
 		enroll_date = str(enroll_date)
 
 		dmap = decision_map
 		obj1 = dmap[0]
 		obj2 = dmap[1]
 
-		if execute_rule1(retailer_code, enroll_date) == True:
+		if execute_rule1(la_id, enroll_date) == True:
 			obj1["result"] = "success"
 			temp = obj1["children"]
 			sub_obj1 = temp[0]
 			sub_obj2 = temp[1]
 			obj1["children"] = []
-			if execute_rule2(retailer_code, enroll_date) == True:
+			if execute_rule2(la_id, enroll_date) == True:
 				sub_obj1["result"] = "success"
 				sub_temp = sub_obj1["children"]
 				sub_sub_obj1 = sub_temp[0]
@@ -456,7 +443,6 @@ def rule_based_filtering(la_id):
 	message = "Loansapp ID does not exist"
 	return message
 
-
 def filter_customers(la_id):
 	message = ""
 	if len(la_id) is not 10:
@@ -465,16 +451,69 @@ def filter_customers(la_id):
 		message = rule_based_filtering(la_id)
 	return message
 
+def fetch_customer_id(key, val):
+	response_code = 400
+	la_id = ''
+	check_id = False
+	print key
+	print val
+	try:
+		if key == "alternate_mobile":
+			check_id = session.query(exists().where(CustomerDetails.mobile_no == val)).scalar()
+		elif key == "retailer_code":
+			check_id = session.query(exists().where(AlliancePartner.unique_id == val)).scalar()
+		if check_id == True:
+			if key == "alternate_mobile":
+				lid = session.query(CustomerDetails.Customer_id).filter(CustomerDetails.mobile_no == val).first()
+			elif key == "retailer_code":
+				lid = session.query(AlliancePartner.Customer_id).filter(AlliancePartner.unique_id== val).first()
+			print la_id
+			message = 'Fetched data successfully!'
+			response_code = 200
+			la_id = lid
+		else:
+			logging.error("Invalid ID provided. Please provide correct information")
+			message = 'Customer not found in the database. Please check the information provided'
+			la_id = 'NA'
+			response_code = 505
+	except Exception, e:
+		logging.error("MySQLDB error : "+str(e))
+		message = "Database error"
+		la_id='NA'
+		response_code=511
+	payload = {}
+	payload["msg"] = message
+	payload["response"]=response_code
+	payload["customer_id"] = la_id
+	return payload
 
-input_data = {}
-input_data["firstname"] = "Megha"
-input_data["lastname"] = "Vij"
-input_data["gender"] = "Female"
-input_data["mobileNo"] = "9888383786"
-input_data["externalId"] = "NP123"
-input_data["activationDate"] = "16 September 2016"
-input_data["submittedOnDate"] = "16 September 2016"
-input_data["dateOfBirth"] = "04 August 1991"
-
-# create_and_store_client("http://lend.ml:4060/LoansApp/API/v1/createClient",input_data)
-
+def fetch_client_info(key, val):
+	message = ''
+	response = 400
+	status_code = 201
+	client_id = 'NA'
+	result = fetch_customer_id(key, val)
+	if result["customer_id"] == 'NA':
+		message = "No such customer exists. Please check the information entered"
+		response = 500
+		status_code = 505
+	else:
+		try:
+			cid = session.query(CustomerLoanMapping.client_id).\
+				filter(CustomerLoanMapping.customer_id == result["la_id"]).first()
+			client_id = cid
+			response = 200
+			status_code = 201
+			message = 'Successfully received the details'
+		except Exception, e:
+			logging.error("MySQLDB error: "+str(e))
+			client_id = cid
+			response = 500
+			status_code = 511
+			message = "Database error: Try again after sometime"
+	data = {}
+	data["msg"] = message
+	data["response"] = response
+	data["status"] = status_code
+	data["client_id"] = client_id
+	return data
