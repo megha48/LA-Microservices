@@ -1,0 +1,753 @@
+2016-09-27 13:04:10,006 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA61994367
+2016-09-27 13:04:58,099 - root - ERROR - Customer with   not found in the database. Please check the information provided
+2016-09-27 13:05:11,256 - root - ERROR - Customer with   not found in the database. Please check the information provided
+2016-09-27 13:06:25,852 - root - ERROR - Customer with mobileNO 8123094560 not found in the database. Please check the information provided
+2016-09-27 13:07:57,578 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA61994367
+2016-09-27 13:07:57,659 - root - DEBUG - Success for map_customer_to_client module. Client ID: 63
+2016-09-27 13:08:07,165 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA68494527
+2016-09-27 13:08:07,255 - root - DEBUG - Success for map_customer_to_client module. Client ID: 67
+2016-09-27 13:45:51,076 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA68494527
+2016-09-27 13:45:51,163 - root - DEBUG - Success for map_customer_to_client module. Client ID: 67
+2016-09-27 13:55:22,152 - root - ERROR - MySQLDB error:'NoneType' object has no attribute 'loan_amount_req'
+2016-09-27 13:58:55,850 - root - DEBUG - Fetching sales and transaction information for the retailer
+2016-09-27 13:58:56,199 - root - DEBUG - Successfully created the decision map for the customer
+2016-09-28 16:38:45,164 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA38281630
+2016-09-28 16:38:45,243 - root - DEBUG - Success for map_customer_to_client module. Client ID: 62
+2016-09-28 17:03:06,142 - root - DEBUG - Fetching sales and transaction information for the retailer
+2016-09-28 17:04:27,822 - root - ERROR - Failure in prepare_customer_scorecard : Database Retrieval error : (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'SELECT EXISTS (SELECT * \nFROM customer_details \nWHERE customer_details.`Customer_id` = %s) AS anon_1'] [parameters: (u'LA68494527',)]
+2016-09-28 17:04:27,826 - root - ERROR - Failure in fetch_customer_id module: Database Retrieval error : (sqlalchemy.exc.InvalidRequestError) Can't reconnect until invalid transaction is rolled back [SQL: u'SELECT EXISTS (SELECT * \nFROM customer_details \nWHERE customer_details.mobile_no = %s) AS anon_1'] [parameters: [immutabledict({})]]
+2016-09-29 17:38:57,825 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA61994367
+2016-09-29 17:48:13,250 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA61994367
+2016-09-29 17:48:29,154 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA61994367
+2016-09-29 17:48:29,216 - root - DEBUG - Success for map_customer_to_client module. Client ID: 63
+2016-09-29 17:58:54,917 - root - DEBUG - Sending OTP to the given number...
+2016-09-29 18:01:07,316 - root - ERROR - send_otp module: Invalid mobile number entered
+2016-09-29 18:01:19,583 - root - DEBUG - Sending OTP to the given number...
+2016-09-29 18:02:39,220 - root - ERROR - send_otp module: Invalid mobile number entered
+2016-09-29 18:02:44,726 - root - DEBUG - Sending OTP to the given number...
+2016-09-29 18:04:58,304 - root - DEBUG - Sending OTP to the given number...
+2016-09-29 18:21:31,733 - root - DEBUG - Sending OTP to the given number...
+2016-09-29 18:22:49,326 - root - DEBUG - Sending OTP to the given number...
+2016-09-29 18:25:04,146 - root - DEBUG - Sending OTP to the given number...
+2016-09-30 10:04:03,821 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA68494527
+2016-09-30 10:04:03,881 - root - DEBUG - Success for map_customer_to_client module. Client ID: 67
+2016-09-30 10:07:26,899 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA68494527
+2016-09-30 10:07:26,960 - root - DEBUG - Success for map_customer_to_client module. Client ID: 67
+2016-09-30 10:08:06,551 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA61994367
+2016-09-30 10:08:30,034 - root - DEBUG - Success for map_customer_to_client module. Client ID: 63
+2016-09-30 10:09:45,742 - root - DEBUG - Sending OTP to the given number...
+2016-09-30 13:05:25,165 - root - ERROR - Error ocurred while setting up connection with MongoDB: global name 'gridfs' is not defined
+2016-09-30 13:06:32,309 - root - ERROR - Exception raised while downloading file: local variable 'fid' referenced before assignment
+2016-09-30 14:32:28,453 - root - ERROR - Exception raised while downloading file: local variable 'fid' referenced before assignment
+2016-09-30 14:34:04,836 - root - ERROR - Exception raised while downloading file: string index out of range
+2016-09-30 14:41:43,016 - root - ERROR - Exception raised while downloading file: string index out of range
+2016-09-30 14:49:50,210 - root - ERROR - Exception raised while downloading file: localhost:27017: [Errno 61] Connection refused
+2016-09-30 14:52:13,463 - root - ERROR - Exception raised while downloading file: global name 'mimetypes' is not defined
+2016-09-30 16:48:41,404 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 16:48:41,863 - root - ERROR - Database Retrieval Error: list index out of range
+2016-09-30 16:51:01,682 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 16:52:07,695 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 16:54:48,500 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 16:57:28,529 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 16:57:28,789 - root - ERROR - Database Retrieval Error: list index out of range
+2016-09-30 17:04:01,999 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 17:04:02,454 - root - ERROR - Database Retrieval Error: list index out of range
+2016-09-30 17:06:33,306 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 17:06:33,560 - root - ERROR - Database Retrieval Error: list index out of range
+2016-09-30 17:08:21,516 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 17:08:21,913 - root - ERROR - Database Retrieval Error: 'str' object has no attribute 'append'
+2016-09-30 17:16:59,080 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 17:17:00,059 - root - DEBUG - Response for rendering documents on the LoansApp Portal{None: None, 'GEN001': 1, 'KYC001': 1}
+2016-09-30 17:21:14,891 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-09-30 17:21:15,290 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-09-30 17:22:30,395 - root - DEBUG - Fetching sales and transaction information for the retailer
+2016-09-30 17:22:31,079 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-01 10:40:08,002 - root - ERROR - Customer with mobileNO 8123094560 not found in the database. Please check the information provided
+2016-10-01 10:42:06,780 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA38281630
+2016-10-01 10:42:06,829 - root - DEBUG - Success for map_customer_to_client module. Client ID: 62
+2016-10-01 10:52:32,060 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA38281630
+2016-10-01 10:52:32,115 - root - DEBUG - Success for map_customer_to_client module. Client ID: 62
+2016-10-01 11:41:55,780 - root - DEBUG - Sending OTP to the given number...
+2016-10-01 11:54:20,205 - root - ERROR - Error encountered while sending OTP to registered mobile number: Invalid mobile number entered
+2016-10-01 12:02:09,760 - root - ERROR - Error encountered while sending OTP to registered mobile number: Invalid mobile number entered
+2016-10-01 12:03:32,596 - root - ERROR - Error encountered while sending OTP to registered mobile number: Invalid mobile number entered
+2016-10-01 13:18:09,151 - root - ERROR - Error encountered while sending OTP to registered mobile number: Invalid mobile number entered
+2016-10-02 13:13:10,059 - root - ERROR - Error encountered while sending OTP to registered mobile number: Invalid mobile number entered
+2016-10-02 13:32:52,722 - root - DEBUG - Sending OTP to the given number...
+2016-10-02 14:08:48,818 - root - DEBUG - Sending OTP to the given number...
+2016-10-02 14:09:33,709 - root - DEBUG - Sending OTP to the given number...
+2016-10-02 14:14:10,252 - root - DEBUG - Sending OTP to the given number...
+2016-10-02 14:16:54,849 - root - DEBUG - Sending OTP to the given number...
+2016-10-02 14:17:51,867 - root - DEBUG - Sending OTP to the given number...
+2016-10-02 14:17:52,160 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-02 14:18:51,729 - root - DEBUG - Sending OTP to the given number...
+2016-10-02 14:22:00,799 - root - DEBUG - Sending OTP to the given number...
+2016-10-02 14:22:31,224 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-02 14:23:22,304 - root - DEBUG - Sending OTP to the given number...
+2016-10-02 14:23:52,675 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-03 14:23:04,543 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:23:05,566 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:24:43,263 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:24:43,465 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:29:55,067 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:29:55,295 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:30:04,484 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:30:04,706 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:34:23,256 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:34:24,103 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:40:37,990 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:40:38,475 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:42:11,454 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:42:11,703 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:46:24,007 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:46:24,623 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:48:48,599 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:48:48,791 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:51:01,823 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:51:02,544 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 14:51:22,306 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 14:51:22,981 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:06:46,840 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:06:47,243 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:06:49,740 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:06:50,478 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:08:21,149 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:08:21,347 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:09:54,335 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:09:54,539 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:10:39,904 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:10:40,115 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:12:14,523 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:12:14,714 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:12:29,165 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:12:29,361 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:12:38,431 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:12:38,618 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:12:48,247 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:12:48,443 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:12:59,457 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:13:00,074 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:13:10,435 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:13:10,977 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:13:26,413 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:13:26,626 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:13:38,187 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:13:38,978 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:13:49,042 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:13:49,238 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:14:06,450 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:14:06,778 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:14:17,203 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:14:17,400 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:16:03,189 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:16:03,419 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:16:19,267 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:16:19,879 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:16:39,951 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:16:40,141 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:17:22,958 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:17:23,940 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:18:05,355 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:18:05,593 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:19:00,755 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:19:00,989 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:19:13,020 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:19:13,226 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:22:23,716 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:22:24,240 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:23:04,777 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:23:04,971 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:24:44,606 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:24:45,259 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:27:23,571 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:27:23,923 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:31:17,458 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:31:17,661 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:31:34,454 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:31:34,640 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:31:44,356 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:31:44,555 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:32:19,819 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:32:20,048 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:32:27,236 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:32:27,434 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:36:40,740 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:36:40,925 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:37:29,899 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:37:30,098 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:40:34,834 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:40:35,039 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 15:59:34,165 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 15:59:34,350 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:02:55,323 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:02:56,100 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:03:07,569 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:03:07,756 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:07:41,493 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:07:41,922 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:08:33,430 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:08:33,620 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:08:40,477 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:08:40,673 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:11:14,285 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:11:15,109 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:12:23,146 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:12:23,580 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:13:16,248 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:13:16,463 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:38:08,251 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:38:08,866 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:38:56,380 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:38:56,618 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:39:09,590 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:39:09,810 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:41:16,466 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:41:16,660 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:41:27,730 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:41:27,920 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:43:56,726 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:43:56,911 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:47:03,405 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:47:03,602 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 16:48:24,917 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 16:48:25,285 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': 1, 'KYC001': 1}
+2016-10-03 17:17:38,452 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:18:47,617 - root - ERROR - Database Retrieval Error: (_mysql_exceptions.OperationalError) (2013, 'Lost connection to MySQL server during query') [SQL: u'SELECT EXISTS (SELECT * \nFROM customer_kyc \nWHERE customer_kyc.`Customer_id` = %s) AS anon_1'] [parameters: (u'LA68494527',)]
+2016-10-03 17:18:47,661 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:18:48,709 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:19:11,331 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:19:11,566 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:19:48,910 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:19:49,279 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:21:12,880 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:21:13,084 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:23:55,907 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:23:56,110 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:24:06,454 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:24:07,786 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:25:36,568 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:25:36,814 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:25:46,089 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:25:46,381 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:28:17,237 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:28:17,759 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:28:28,296 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:28:28,616 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:29:49,911 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:29:50,114 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:30:00,970 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:30:01,236 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:31:12,447 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:31:12,693 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN001': None, 'KYC001': 0}
+2016-10-03 17:38:25,384 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 17:38:25,635 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN010': 1, 'GEN008': 1, 'GEN009': 1, 'GEN004': 1, 'GEN005': 1, 'GEN006': 1, 'GEN007': 1, 'KYC001': 0, 'GEN001': 1, 'GEN002': 1, 'GEN003': 1}
+2016-10-03 17:38:47,870 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'GEN001')])
+2016-10-03 17:38:47,931 - root - ERROR - Exception raised while downloading file: '.docx'
+2016-10-03 17:39:04,619 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'GEN001')])
+2016-10-03 17:39:04,679 - root - ERROR - Exception raised while downloading file: '.docx'
+2016-10-03 18:53:11,264 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC002')])
+2016-10-03 18:53:11,391 - root - ERROR - Exception raised while downloading file: global name 'cust_is' is not defined
+2016-10-03 18:54:33,358 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC002')])
+2016-10-03 18:54:34,055 - root - DEBUG - File - aadhaar.pdf for LA68494527 downloaded successfully!
+2016-10-03 18:55:06,446 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-03 18:55:06,631 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN010': 0, 'KYC002': 1, 'GEN008': 0, 'GEN009': 0, 'GEN004': 0, 'GEN005': 0, 'GEN006': 0, 'GEN007': 0, 'KYC001': 1, 'GEN001': 0, 'GEN002': 0, 'GEN003': 0}
+2016-10-03 20:03:44,633 - root - ERROR - Database Retrieval Error : local variable 'cust_status' referenced before assignment
+2016-10-03 20:06:16,370 - root - ERROR - Database Retrieval Error : 'NoneType' object has no attribute 'basic_details_flag'
+2016-10-03 20:11:25,439 - root - ERROR - Database Retrieval Error : 'NoneType' object has no attribute 'basic_details_flag'
+2016-10-03 20:12:48,570 - root - ERROR - Database Retrieval Error : 'NoneType' object has no attribute '__getitem__'
+2016-10-03 20:14:31,857 - root - ERROR - Database Retrieval Error : 'customer_details' object does not support indexing
+2016-10-03 20:25:17,757 - root - ERROR - Database Retrieval Error : 'customer_details' object does not support indexing
+2016-10-03 20:28:19,993 - root - ERROR - Database Retrieval Error : 'customer_details' object does not support indexing
+2016-10-03 20:29:04,929 - root - ERROR - Database Retrieval Error : 'NoneType' object has no attribute '__getitem__'
+2016-10-03 20:30:59,141 - root - ERROR - Database Retrieval Error : 'profile_completeness' object does not support indexing
+2016-10-04 10:08:45,010 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-04 10:08:45,222 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'GEN010': 0, 'KYC002': 1, 'GEN008': 0, 'GEN009': 0, 'GEN004': 0, 'GEN005': 0, 'GEN006': 0, 'GEN007': 0, 'KYC001': 1, 'GEN001': 0, 'GEN002': 0, 'GEN003': 0}
+2016-10-04 10:30:47,691 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-04 10:30:47,977 - root - ERROR - Database Retrieval Error: list index out of range
+2016-10-04 10:33:46,859 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-04 10:33:47,048 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'KYC002': 1, 'KYC001': 1}
+2016-10-04 10:36:57,868 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC001')])
+2016-10-04 10:37:28,166 - root - ERROR - Exception raised while downloading file: localhost:27017: [Errno 61] Connection refused
+2016-10-04 10:38:01,021 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC001')])
+2016-10-04 10:38:01,201 - root - DEBUG - File - PAN.pdf for LA68494527 downloaded successfully!
+2016-10-04 12:29:35,535 - root - ERROR - Error ocurred while setting up connection with MongoDB: port must be an instance of int
+2016-10-04 12:35:13,365 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC002')])
+2016-10-04 12:35:14,330 - root - ERROR - Exception raised while downloading file: no file in gridfs collection Collection(Database(MongoClient(host=['lend.ml:27017'], document_class=dict, tz_aware=False, connect=True), u'test'), u'fs.files') with _id ObjectId('57f25b4cdfa60556e4f6bbc3')
+2016-10-04 12:38:31,044 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC002')])
+2016-10-04 12:38:31,723 - root - ERROR - Exception raised while downloading file: no file in gridfs collection Collection(Database(MongoClient(host=['lend.ml:27017'], document_class=dict, tz_aware=False, connect=True), u'test'), u'fs.files') with _id ObjectId('57f25b4cdfa60556e4f6bbc3')
+2016-10-04 12:39:38,472 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC002')])
+2016-10-04 12:39:42,089 - root - DEBUG - File - aadhaar.pdf for LA68494527 downloaded successfully!
+2016-10-04 12:41:45,153 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-04 12:41:45,412 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'KYC002': 1, 'KYC001': 1}
+2016-10-04 13:13:09,783 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC002')])
+2016-10-04 13:13:13,847 - root - ERROR - Exception raised while downloading file: local variable 'h' referenced before assignment
+2016-10-04 13:16:29,656 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC002')])
+2016-10-04 13:16:34,087 - root - DEBUG - File - aadhaar.pdf for LA68494527 downloaded successfully!
+2016-10-04 18:18:11,648 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 18:18:13,058 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 18:18:13,059 - root - DEBUG - Response for filtering customers based on Rule System: <Response 787 bytes [200 OK]>
+2016-10-04 18:34:46,346 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 18:34:46,591 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 18:34:46,592 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 18:52:34,530 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 18:52:34,768 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 18:52:34,769 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 18:53:16,510 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 18:53:17,231 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 18:53:17,231 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 19:27:53,804 - root - ERROR - Database Retrieval Error : (_mysql_exceptions.DataError) (1406, "Data too long for column 'credit_officer_decision_flag' at row 1") [SQL: u'INSERT INTO customer_state (`Customer_id`, credit_officer_decision_flag, credit_officer_comments) VALUES (%s, %s, %s)'] [parameters: (u'LA68494527', u'1', u'profile meets criteria')]
+2016-10-04 19:30:09,933 - root - ERROR - Database Retrieval Error : expected string or buffer
+2016-10-04 19:31:05,040 - root - ERROR - Database Retrieval Error : (_mysql_exceptions.DataError) (1406, "Data too long for column 'credit_officer_decision_flag' at row 1") [SQL: u'UPDATE customer_state SET credit_officer_decision_flag=%s, credit_officer_comments=%s WHERE customer_state.`Customer_id` = %s'] [parameters: (u'1', u'profile meets criteria', u'LA68494527')]
+2016-10-04 19:33:26,146 - root - ERROR - Database Retrieval Error : (_mysql_exceptions.DataError) (1406, "Data too long for column 'credit_officer_decision_flag' at row 1") [SQL: u'UPDATE customer_state SET credit_officer_decision_flag=%s, credit_officer_comments=%s WHERE customer_state.`Customer_id` = %s'] [parameters: (u'1', u'profile meets criteria', u'LA68494527')]
+2016-10-04 19:42:19,447 - root - ERROR - Database Retrieval Error : (_mysql_exceptions.DataError) (1406, "Data too long for column 'credit_officer_decision_flag' at row 1") [SQL: u'INSERT INTO customer_state (`Customer_id`, credit_officer_decision_flag, credit_officer_comments) VALUES (%s, %s, %s)'] [parameters: (u'LA68494527', u'1', u'profile meets criteria')]
+2016-10-04 19:43:15,974 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 19:43:17,163 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 19:43:17,164 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 19:45:10,976 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 19:45:12,321 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 19:45:12,322 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 19:45:26,653 - root - ERROR - Database Retrieval Error : expected string or buffer
+2016-10-04 19:46:46,576 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 19:48:06,987 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 20:08:04,300 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 20:09:32,265 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 20:10:03,866 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 20:11:37,774 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 20:14:00,620 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 20:19:48,270 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 20:19:48,468 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 20:19:48,469 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 20:20:56,925 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - undefined
+2016-10-04 20:20:56,926 - root - ERROR - Invalid ID entered. Please check credentials.
+2016-10-04 20:25:31,928 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 20:26:06,900 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 20:26:07,086 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 20:26:07,086 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 20:32:53,170 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 20:37:14,777 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 20:38:23,431 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 20:41:59,786 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 20:55:15,517 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 21:02:04,299 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:03:05,360 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:05:30,120 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:08:08,866 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 21:08:09,065 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 21:08:09,065 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 21:11:52,611 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:12:10,696 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:13:49,838 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:18:13,388 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:20:14,178 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:24:06,231 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:26:01,041 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - undefined
+2016-10-04 21:26:01,041 - root - ERROR - Invalid ID entered. Please check credentials.
+2016-10-04 21:27:23,859 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 21:27:24,046 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 21:27:24,046 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 21:31:56,827 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 21:31:57,010 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 21:31:57,010 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 21:32:05,873 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 21:32:06,057 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 21:32:06,057 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 21:37:02,841 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 21:37:03,026 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 21:37:03,026 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 21:37:23,089 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:38:25,217 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:42:56,641 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 21:42:56,827 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 21:42:56,828 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 21:43:15,558 - root - ERROR - Database Error : expected string or buffer
+2016-10-04 21:55:02,896 - root - ERROR - Database retrieval error : expected string or buffer
+2016-10-04 21:55:49,183 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 21:55:49,372 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 21:55:49,372 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 21:56:06,514 - root - ERROR - Entity '<class 'sqlalchemy.ext.automap.customer_state'>' has no property 'credit_officer_decsion_flag'
+2016-10-04 22:01:12,750 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 22:01:12,939 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 22:01:12,940 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 22:02:43,276 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 22:02:43,464 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 22:02:43,464 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 22:07:13,275 - root - DEBUG - Success
+2016-10-04 22:07:19,351 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - undefined
+2016-10-04 22:07:19,352 - root - ERROR - Invalid ID entered. Please check credentials.
+2016-10-04 22:10:28,283 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 22:10:28,469 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 22:10:28,469 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 22:10:40,690 - root - DEBUG - Success
+2016-10-04 22:16:35,601 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-04 22:16:35,791 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 22:16:35,791 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-04 22:16:39,102 - root - DEBUG - Success
+2016-10-04 22:27:16,122 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA35987087
+2016-10-04 22:27:16,362 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 22:27:16,362 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-04 22:27:27,097 - root - DEBUG - Success
+2016-10-04 22:38:35,556 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA35987087
+2016-10-04 22:38:35,791 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-04 22:38:35,792 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-04 22:38:49,602 - root - DEBUG - Success
+2016-10-05 01:20:07,873 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA99698739
+2016-10-05 01:20:08,116 - root - ERROR - Failure in prepare_customer_scorecard : Database Retrieval error : 'NoneType' object has no attribute '__getitem__'
+2016-10-05 01:20:08,116 - root - DEBUG - Response for filtering customers based on Rule System: <Response 80 bytes [500 INTERNAL SERVER ERROR]>
+2016-10-05 01:22:58,536 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA80987182
+2016-10-05 01:22:58,724 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-05 01:22:58,724 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-05 01:24:06,316 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA91374492
+2016-10-05 01:24:06,545 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-05 01:24:06,545 - root - DEBUG - Response for filtering customers based on Rule System: <Response 790 bytes [200 OK]>
+2016-10-05 01:31:26,635 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA91374492
+2016-10-05 01:31:26,894 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-05 01:31:26,894 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-05 01:31:53,998 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA80987182
+2016-10-05 01:31:54,214 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-05 01:31:54,214 - root - DEBUG - Response for filtering customers based on Rule System: <Response 790 bytes [200 OK]>
+2016-10-05 01:33:35,641 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA80987182
+2016-10-05 01:33:35,854 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-05 01:33:35,855 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-05 01:33:50,964 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA91374492
+2016-10-05 01:33:51,232 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-05 01:33:51,233 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-05 01:34:01,737 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA68494527
+2016-10-05 01:34:01,923 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-05 01:34:01,923 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-05 01:41:39,368 - root - ERROR - Error in update_credit_officer_result : (_mysql_exceptions.IntegrityError) (1062, "Duplicate entry 'LA38281630' for key 'PRIMARY'") [SQL: u'INSERT INTO customer_state (`Customer_id`, credit_officer_decision_flag, credit_officer_comments) VALUES (%s, %s, %s)'] [parameters: (u'LA38281630', 0, u'KYC not complete')]
+2016-10-05 01:43:17,437 - root - DEBUG - Success
+2016-10-05 01:44:13,332 - root - DEBUG - Success
+2016-10-05 02:26:20,318 - root - ERROR - Error in update_credit_officer_result : (_mysql_exceptions.OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction') [SQL: u'SELECT customer_state.`Customer_id` AS `customer_state_Customer_id` \nFROM customer_state \nWHERE customer_state.`Customer_id` = %s FOR UPDATE'] [parameters: (u'LA68494527',)]
+2016-10-05 02:27:25,319 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA91374492
+2016-10-05 02:27:25,542 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-05 02:27:25,542 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-05 02:37:35,242 - root - ERROR - Error in update_credit_officer_result : (_mysql_exceptions.OperationalError) (1205, 'Lock wait timeout exceeded; try restarting transaction') [SQL: u'SELECT customer_state.`Customer_id` AS `customer_state_Customer_id` \nFROM customer_state \nWHERE customer_state.`Customer_id` = %s FOR UPDATE'] [parameters: (u'LA68494527',)]
+2016-10-05 15:23:11,628 - root - DEBUG - Success
+2016-10-05 15:37:04,781 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 15:37:17,968 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 15:51:01,667 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA68494527')])
+2016-10-05 15:51:01,866 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'CIBIL': 1, 'KYC002': 1, 'KYC001': 1}
+2016-10-05 15:52:35,040 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA61994367
+2016-10-05 15:52:35,088 - root - DEBUG - Success for map_customer_to_client module. Client ID: 63
+2016-10-05 16:51:28,411 - root - DEBUG - LYMPH started!
+2016-10-05 17:00:33,116 - root - DEBUG - LYMPH started!
+2016-10-05 17:02:35,300 - root - ERROR - Customer with mobileNO 9887349823 not found in the database. Please check the information provided
+2016-10-05 17:02:48,738 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA68494527
+2016-10-05 17:02:48,790 - root - DEBUG - Success for map_customer_to_client module. Client ID: 67
+2016-10-05 17:22:51,190 - root - DEBUG - LYMPH started!
+2016-10-05 17:39:42,570 - root - DEBUG - LYMPH started!
+2016-10-05 18:01:52,160 - root - DEBUG - LYMPH started!
+2016-10-05 18:13:46,784 - root - DEBUG - LYMPH started!
+2016-10-05 18:19:28,760 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:19:35,067 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:20:35,634 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:20:41,688 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:29:24,631 - root - DEBUG - LYMPH started!
+2016-10-05 18:30:10,207 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:30:12,592 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:30:27,978 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:31:08,399 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:31:10,507 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:31:22,756 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:32:28,588 - root - DEBUG - LYMPH started!
+2016-10-05 18:32:28,753 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:32:30,433 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:33:25,232 - root - DEBUG - LYMPH started!
+2016-10-05 18:33:56,455 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:34:35,497 - root - DEBUG - LYMPH started!
+2016-10-05 18:34:53,920 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:35:24,860 - root - DEBUG - LYMPH started!
+2016-10-05 18:35:29,712 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:36:07,134 - root - DEBUG - LYMPH started!
+2016-10-05 18:36:30,391 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:36:35,306 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:36:50,757 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:36:54,843 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:37:27,640 - root - DEBUG - LYMPH started!
+2016-10-05 18:37:30,614 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:37:35,849 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:38:07,850 - root - DEBUG - LYMPH started!
+2016-10-05 18:38:14,390 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:38:44,001 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:38:49,325 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:39:44,760 - root - DEBUG - LYMPH started!
+2016-10-05 18:39:51,893 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:40:52,348 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:40:59,300 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:41:29,244 - root - DEBUG - LYMPH started!
+2016-10-05 18:41:39,575 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:41:46,939 - root - ERROR - OTP_Error: OTP sending failed
+2016-10-05 18:42:46,299 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:47:44,949 - root - DEBUG - LYMPH started!
+2016-10-05 18:48:19,015 - root - DEBUG - Sending OTP to the given number...
+2016-10-05 18:54:34,115 - root - DEBUG - LYMPH started!
+2016-10-05 19:35:45,702 - root - DEBUG - LYMPH started!
+2016-10-05 19:37:25,638 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA99698739')])
+2016-10-05 19:38:06,599 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA89171490')])
+2016-10-05 19:44:16,437 - root - DEBUG - LYMPH started!
+2016-10-05 19:44:31,257 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA89171490')])
+2016-10-05 19:44:31,257 - root - ERROR - Database Retrieval Error: 'function' object has no attribute 'where'
+2016-10-05 19:46:22,735 - root - DEBUG - LYMPH started!
+2016-10-05 19:46:38,172 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA89171490')])
+2016-10-05 19:46:38,182 - root - ERROR - Database Retrieval Error: global name 'Customer_Details' is not defined
+2016-10-05 19:47:11,279 - root - DEBUG - LYMPH started!
+2016-10-05 19:47:18,750 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA89171490')])
+2016-10-05 19:48:30,271 - root - DEBUG - LYMPH started!
+2016-10-05 19:48:39,908 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA89171490')])
+2016-10-05 19:50:44,604 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA89171490
+2016-10-05 19:50:44,834 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-05 19:50:44,835 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-05 20:40:58,791 - root - DEBUG - LYMPH started!
+2016-10-06 10:13:02,130 - root - DEBUG - LYMPH started!
+2016-10-06 10:23:20,686 - root - DEBUG - LYMPH started!
+2016-10-06 10:40:33,924 - root - DEBUG - LYMPH started!
+2016-10-06 11:21:16,938 - root - DEBUG - LYMPH started!
+2016-10-06 11:21:56,851 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA47743392
+2016-10-06 11:21:56,913 - root - DEBUG - Success for map_customer_to_client module. Client ID: 82
+2016-10-06 11:28:29,633 - root - DEBUG - LYMPH started!
+2016-10-06 11:32:24,504 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA47743392
+2016-10-06 11:32:24,511 - root - DEBUG - Customer ID fetched for Client fetching : LA47743392
+2016-10-06 11:32:24,558 - root - DEBUG - Success for map_customer_to_client module. Client ID: 82
+2016-10-06 11:32:39,295 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA68494527
+2016-10-06 11:32:39,295 - root - DEBUG - Customer ID fetched for Client fetching : LA68494527
+2016-10-06 11:32:39,341 - root - DEBUG - Success for map_customer_to_client module. Client ID: 67
+2016-10-06 12:08:55,348 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA89537767
+2016-10-06 12:08:55,365 - root - DEBUG - Customer ID fetched for Client fetching : LA89537767
+2016-10-06 12:08:55,620 - root - ERROR - Database Retrieval error : 'NoneType' object has no attribute '__getitem__'
+2016-10-06 12:10:39,693 - root - DEBUG - LYMPH started!
+2016-10-06 12:10:48,731 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA89537767
+2016-10-06 12:10:48,731 - root - DEBUG - Customer ID fetched for Client fetching : LA89537767
+2016-10-06 12:10:49,243 - root - DEBUG - Success for map_customer_to_client module. Client ID: 83
+2016-10-06 12:18:58,111 - root - DEBUG - LYMPH started!
+2016-10-06 12:38:39,477 - root - DEBUG - LYMPH started!
+2016-10-06 12:39:03,851 - root - DEBUG - Preparing to fetch the list of customers present in our system: No paramters for this request
+2016-10-06 12:39:04,045 - root - DEBUG - Retrieving PAN Card information for Customer : Srikanth Nadhamuni
+2016-10-06 12:39:28,069 - root - DEBUG - Preparing to fetch the list of customers present in our system: No paramters for this request
+2016-10-06 12:39:28,232 - root - DEBUG - Retrieving PAN Card information for Customer : Srikanth Nadhamuni
+2016-10-06 12:40:17,742 - root - DEBUG - Preparing to fetch the Sankey Diagram for LOS: No paramters required
+2016-10-06 12:40:28,447 - root - DEBUG - Successfully populated the dendogram
+2016-10-06 12:43:01,327 - root - DEBUG - Fetching the customer ID for LoansApp with request parameters: ImmutableMultiDict([('mobileNO', u'9820543747')])
+2016-10-06 12:43:01,611 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA35987087
+2016-10-06 12:43:01,611 - root - DEBUG - Response for fetching the customer ID for Loansapp: {"msg": "Success in retrieving the customer ID for the details provided", "status": 200, "customer_id": "LA35987087"}
+2016-10-06 12:43:21,144 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA35987087
+2016-10-06 12:43:21,145 - root - DEBUG - Customer ID fetched for Client fetching : LA35987087
+2016-10-06 12:43:21,194 - root - DEBUG - Success for map_customer_to_client module. Client ID: 65
+2016-10-06 12:43:45,924 - root - DEBUG - Success for map_customer_to_client module. Client ID: 65
+2016-10-06 12:44:17,895 - root - DEBUG - Parameters for retrieving the loan information of the customer: LA35987087
+2016-10-06 12:44:18,457 - root - ERROR - MySQLDB error:'NoneType' object has no attribute 'loan_amount_req'
+2016-10-06 12:44:55,696 - root - DEBUG - Parameters for retrieving the loan information of the customer: LA61994367
+2016-10-06 12:44:56,029 - root - ERROR - MySQLDB error:global name 'SUCCESS_LOAN_INFO' is not defined
+2016-10-06 12:45:31,781 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA61994367
+2016-10-06 12:45:32,036 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 12:45:32,036 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-06 12:47:19,296 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA61994367')])
+2016-10-06 12:47:19,874 - root - ERROR - Database Retrieval Error: 'NoneType' object has no attribute '__getitem__'
+2016-10-06 12:50:02,089 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA61994367'), ('doc_id', u'CIBIL')])
+2016-10-06 12:50:03,467 - root - DEBUG - File - Cibil.png for LA61994367 downloaded successfully!
+2016-10-06 12:52:26,232 - root - DEBUG - LYMPH started!
+2016-10-06 12:53:58,525 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA61994367')])
+2016-10-06 12:53:59,263 - root - ERROR - Database Retrieval Error: 'NoneType' object has no attribute '__getitem__'
+2016-10-06 12:54:52,346 - root - DEBUG - Preparing to fetch the list of customers present in our system: No paramters for this request
+2016-10-06 12:54:52,591 - root - DEBUG - Retrieving PAN Card information for Customer : Srikanth Nadhamuni
+2016-10-06 13:00:22,633 - root - DEBUG - LYMPH started!
+2016-10-06 13:00:59,483 - root - DEBUG - Preparing to fetch the list of customers present in our system: No paramters for this request
+2016-10-06 13:04:32,933 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA61994367')])
+2016-10-06 13:04:33,328 - root - ERROR - Database Retrieval Error: cannot concatenate 'str' and 'bool' objects
+2016-10-06 13:06:07,079 - root - DEBUG - LYMPH started!
+2016-10-06 13:06:21,393 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA61994367')])
+2016-10-06 13:06:21,498 - root - DEBUG - Checking for customer existence : True
+2016-10-06 13:06:21,711 - root - DEBUG - Checking for customer has given any documents : False True
+2016-10-06 13:06:22,024 - root - ERROR - Database Retrieval Error: cannot concatenate 'str' and 'list' objects
+2016-10-06 13:07:24,005 - root - DEBUG - Preparing to fetch the list of customers present in our system: No paramters for this request
+2016-10-06 13:08:50,864 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA61994367')])
+2016-10-06 13:08:50,972 - root - DEBUG - Checking for customer existence : True
+2016-10-06 13:08:51,180 - root - DEBUG - Checking for customer has given any documents : False True
+2016-10-06 13:08:51,487 - root - ERROR - Database Retrieval Error: cannot concatenate 'str' and 'list' objects
+2016-10-06 13:10:05,749 - root - DEBUG - LYMPH started!
+2016-10-06 13:10:10,052 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA61994367')])
+2016-10-06 13:10:10,099 - root - DEBUG - Checking for customer existence : True
+2016-10-06 13:10:10,192 - root - DEBUG - Checking for customer has given any documents : False True
+2016-10-06 13:10:10,240 - root - DEBUG - Checking for documents: [('CIBIL', 1)]
+2016-10-06 13:10:10,379 - root - ERROR - Database Retrieval Error: 'NoneType' object has no attribute '__getitem__'
+2016-10-06 13:11:44,828 - root - DEBUG - LYMPH started!
+2016-10-06 13:11:53,007 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA61994367')])
+2016-10-06 13:11:53,076 - root - DEBUG - Checking for customer existence : True
+2016-10-06 13:11:53,217 - root - DEBUG - Checking for customer has given any documents : False True
+2016-10-06 13:11:53,288 - root - DEBUG - Checking for documents: [('CIBIL', 1)]
+2016-10-06 13:11:53,363 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'CIBIL': 1}
+2016-10-06 13:12:13,016 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA47743392')])
+2016-10-06 13:12:13,242 - root - DEBUG - Checking for customer existence : True
+2016-10-06 13:12:13,337 - root - DEBUG - Checking for customer has given any documents : False False
+2016-10-06 13:20:58,537 - root - DEBUG - LYMPH started!
+2016-10-06 13:27:04,117 - root - DEBUG - LYMPH started!
+2016-10-06 13:33:08,182 - root - DEBUG - Parameters for retrieving the loan information of the customer: LA61994367
+2016-10-06 13:33:08,304 - root - ERROR - Error:global name 'SUCCESS_LOAN_INFO' is not defined
+2016-10-06 13:37:39,529 - root - DEBUG - LYMPH started!
+2016-10-06 13:42:40,918 - root - DEBUG - Parameters for retrieving the loan information of the customer: LA61994367
+2016-10-06 13:57:34,128 - root - DEBUG - LYMPH started!
+2016-10-06 13:57:57,559 - root - DEBUG - Sending OTP to the given number...
+2016-10-06 13:58:53,521 - root - DEBUG - LYMPH started!
+2016-10-06 13:59:30,571 - root - DEBUG - Sending OTP to the given number...
+2016-10-06 14:01:22,514 - root - DEBUG - LYMPH started!
+2016-10-06 14:01:31,959 - root - DEBUG - Sending OTP to the given number...
+2016-10-06 14:02:45,552 - root - DEBUG - Preparing to fetch the Sankey Diagram for LOS: No paramters required
+2016-10-06 14:02:49,299 - root - DEBUG - Successfully populated the dendogram
+2016-10-06 14:04:13,442 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA38281630
+2016-10-06 14:04:13,453 - root - DEBUG - Customer ID fetched for Client fetching : LA38281630
+2016-10-06 14:04:13,503 - root - DEBUG - Success for map_customer_to_client module. Client ID: 62
+2016-10-06 14:05:14,674 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA89675385
+2016-10-06 14:05:14,689 - root - DEBUG - Customer ID fetched for Client fetching : LA89675385
+2016-10-06 14:05:14,779 - root - DEBUG - Success for map_customer_to_client module. Client ID: 73
+2016-10-06 14:08:08,044 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA89171490')])
+2016-10-06 14:08:08,089 - root - DEBUG - Checking for customer existence : True
+2016-10-06 14:08:08,180 - root - DEBUG - Checking for customer has given any documents : False True
+2016-10-06 14:08:08,226 - root - DEBUG - Checking for documents: [('CIBIL', 1)]
+2016-10-06 14:08:08,274 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'CIBIL': 1}
+2016-10-06 15:30:39,995 - root - DEBUG - LYMPH started!
+2016-10-06 15:31:27,188 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA96531860
+2016-10-06 15:31:27,188 - root - DEBUG - Customer ID fetched for Client fetching : LA96531860
+2016-10-06 15:31:27,236 - root - DEBUG - Success for map_customer_to_client module. Client ID: 84
+2016-10-06 15:37:58,492 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA11384669
+2016-10-06 15:37:59,381 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 15:37:59,381 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-06 15:47:33,088 - root - DEBUG - LYMPH started!
+2016-10-06 15:50:12,941 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA89675385
+2016-10-06 15:50:12,981 - root - DEBUG - Customer ID fetched for Client fetching : LA89675385
+2016-10-06 15:50:13,176 - root - DEBUG - Success for map_customer_to_client module. Client ID: 73
+2016-10-06 15:50:20,404 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA89537767
+2016-10-06 15:50:20,404 - root - DEBUG - Customer ID fetched for Client fetching : LA89537767
+2016-10-06 15:50:20,600 - root - DEBUG - Success for map_customer_to_client module. Client ID: 83
+2016-10-06 15:50:30,828 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA68494527
+2016-10-06 15:50:30,828 - root - DEBUG - Customer ID fetched for Client fetching : LA68494527
+2016-10-06 15:50:31,033 - root - DEBUG - Success for map_customer_to_client module. Client ID: 67
+2016-10-06 15:51:11,931 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA61994367
+2016-10-06 15:51:12,457 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 15:51:12,458 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-06 15:51:28,085 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA61994367')])
+2016-10-06 15:51:28,616 - root - DEBUG - Checking for customer existence : True
+2016-10-06 15:51:28,921 - root - DEBUG - Checking for customer has given any documents : False True
+2016-10-06 15:51:29,146 - root - DEBUG - Checking for documents: [('CIBIL', 1)]
+2016-10-06 15:51:29,379 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'CIBIL': 1}
+2016-10-06 15:51:50,918 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA61994367'), ('doc_id', u'CIBIL')])
+2016-10-06 15:51:52,139 - root - DEBUG - File - Cibil.png for LA61994367 downloaded successfully!
+2016-10-06 15:52:29,505 - root - DEBUG - Parameters for retrieving the loan information of the customer: LA61994367
+2016-10-06 15:52:45,383 - root - DEBUG - Success for map_customer_to_client module. Client ID: 63
+2016-10-06 16:08:16,077 - root - DEBUG - LYMPH started!
+2016-10-06 16:31:46,994 - root - DEBUG - LYMPH started!
+2016-10-06 16:42:31,407 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA91107841
+2016-10-06 16:42:31,462 - root - DEBUG - Customer ID fetched for Client fetching : LA91107841
+2016-10-06 16:42:31,685 - root - ERROR - Database Retrieval error : 'NoneType' object has no attribute '__getitem__'
+2016-10-06 16:42:57,686 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA91107841
+2016-10-06 16:42:57,718 - root - DEBUG - Customer ID fetched for Client fetching : LA91107841
+2016-10-06 16:42:57,947 - root - ERROR - Database Retrieval error : 'NoneType' object has no attribute '__getitem__'
+2016-10-06 16:45:34,763 - root - ERROR - Unable to fetch details : Customer not found in our records.
+2016-10-06 16:47:53,177 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA91107841
+2016-10-06 16:47:53,241 - root - DEBUG - Customer ID fetched for Client fetching : LA91107841
+2016-10-06 16:47:53,472 - root - DEBUG - Success for map_customer_to_client module. Client ID: 85
+2016-10-06 16:48:25,889 - root - ERROR - Unable to fetch details : Customer not found in our records.
+2016-10-06 16:51:13,438 - root - DEBUG - LYMPH started!
+2016-10-06 16:52:21,056 - root - ERROR - Unable to fetch details : Customer not found in our records.
+2016-10-06 16:56:00,253 - root - ERROR - Unable to fetch details : Customer not found in our records.
+2016-10-06 16:56:26,518 - root - DEBUG - LYMPH started!
+2016-10-06 17:00:28,126 - root - DEBUG - LYMPH started!
+2016-10-06 17:01:05,675 - root - DEBUG - Sending OTP to the given number...
+2016-10-06 17:01:06,342 - root - DEBUG - SMSGateway Payload : {u'ErrorCode': u'000', u'ErrorMessage': u'Success', u'MessageData': [{u'Number': u'919888383786', u'MessageId': u'z5VRqqtrsUqX0WqTder3RQ'}], u'JobId': u'49855634'}
+2016-10-06 17:05:44,494 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA91107841
+2016-10-06 17:05:44,495 - root - DEBUG - Customer ID fetched for Client fetching : LA91107841
+2016-10-06 17:05:44,813 - root - DEBUG - Success for map_customer_to_client module. Client ID: 85
+2016-10-06 17:07:45,531 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA96531860
+2016-10-06 17:07:45,531 - root - DEBUG - Customer ID fetched for Client fetching : LA96531860
+2016-10-06 17:07:45,811 - root - DEBUG - Success for map_customer_to_client module. Client ID: 84
+2016-10-06 17:22:48,369 - root - DEBUG - LYMPH started!
+2016-10-06 17:24:34,429 - root - DEBUG - LYMPH started!
+2016-10-06 18:37:51,723 - root - DEBUG - LYMPH started!
+2016-10-06 18:40:36,336 - root - DEBUG - LYMPH started!
+2016-10-06 18:42:54,708 - root - DEBUG - LYMPH started!
+2016-10-06 18:44:07,324 - root - DEBUG - LYMPH started!
+2016-10-06 18:44:15,123 - root - ERROR - Some error : too many values to unpack
+2016-10-06 18:45:14,087 - root - DEBUG - LYMPH started!
+2016-10-06 18:45:19,849 - root - ERROR - Some error : too many values to unpack
+2016-10-06 18:46:14,082 - root - DEBUG - LYMPH started!
+2016-10-06 18:46:19,016 - root - ERROR - Some error : global name 'name' is not defined
+2016-10-06 18:47:52,641 - root - DEBUG - LYMPH started!
+2016-10-06 18:47:57,590 - root - ERROR - Some error : cannot concatenate 'str' and 'int' objects
+2016-10-06 18:49:35,406 - root - DEBUG - LYMPH started!
+2016-10-06 18:50:18,292 - root - ERROR - Some error : cannot concatenate 'str' and 'int' objects
+2016-10-06 18:51:06,977 - root - DEBUG - LYMPH started!
+2016-10-06 18:51:14,471 - root - ERROR - Some error : cannot concatenate 'str' and 'int' objects
+2016-10-06 18:52:14,086 - root - DEBUG - LYMPH started!
+2016-10-06 18:52:20,602 - root - ERROR - Some error : cannot concatenate 'str' and 'int' objects
+2016-10-06 18:54:13,489 - root - DEBUG - LYMPH started!
+2016-10-06 18:54:24,484 - root - DEBUG - Result received : Success on retrieving basic information of customer 211
+2016-10-06 18:57:38,908 - root - DEBUG - LYMPH started!
+2016-10-06 18:57:46,846 - root - DEBUG - Result received : Success on retrieving basic information of customer 211
+2016-10-06 19:01:04,534 - root - DEBUG - LYMPH started!
+2016-10-06 19:02:46,632 - root - DEBUG - LYMPH started!
+2016-10-06 19:04:00,872 - root - DEBUG - LYMPH started!
+2016-10-06 19:05:18,036 - root - DEBUG - LYMPH started!
+2016-10-06 19:07:42,103 - root - DEBUG - LYMPH started!
+2016-10-06 19:09:48,216 - root - ERROR - Error in update_credit_officer_result : 'Query' object has no attribute 'last'
+2016-10-06 19:11:38,660 - root - DEBUG - LYMPH started!
+2016-10-06 19:11:44,442 - root - ERROR - Error in update_credit_officer_result : 'HTTP_X_REAL_IP'
+2016-10-06 19:14:05,955 - root - DEBUG - LYMPH started!
+2016-10-06 19:14:11,663 - root - ERROR - Error in update_credit_officer_result : (_mysql_exceptions.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'l_id\': "\'\'", \'c_id\': "\'LA68494527\'", \'state_change\': "\'rejected\'", \'ip\': \'NULL\'\' at line 1') [SQL: u'INSERT INTO audit_tab (id, audit_log) VALUES (%s, %s)'] [parameters: (1, {'l_id': '', 'c_id': u'LA68494527', 'state_change': 'rejected', 'ip': None})]
+2016-10-06 19:15:18,283 - root - DEBUG - LYMPH started!
+2016-10-06 19:15:25,063 - root - ERROR - Error in update_credit_officer_result : (_mysql_exceptions.ProgrammingError) (1064, 'You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'l_id\': "\'\'", \'c_id\': "\'LA68494527\'", \'state_change\': "\'rejected\'", \'ip\': \'NULL\'\' at line 1') [SQL: u'INSERT INTO audit_tab (id, audit_log) VALUES (%s, %s)'] [parameters: (1, {'l_id': '', 'c_id': u'LA68494527', 'state_change': 'rejected', 'ip': None})]
+2016-10-06 19:16:18,381 - root - DEBUG - LYMPH started!
+2016-10-06 19:23:59,487 - root - DEBUG - LYMPH started!
+2016-10-06 19:32:21,796 - root - ERROR - Some error : 'NoneType' object has no attribute 'permanent_address'
+2016-10-06 19:35:12,907 - root - DEBUG - LYMPH started!
+2016-10-06 19:35:51,826 - root - DEBUG - Result received : Success on retrieving basic information of customer 211
+2016-10-06 19:38:19,002 - root - DEBUG - Parameters for rendering documents on the LoansApp Portal: ImmutableMultiDict([('customer_id', u'LA35987087')])
+2016-10-06 19:38:21,096 - root - DEBUG - Checking for customer existence : True
+2016-10-06 19:38:21,523 - root - DEBUG - Checking for customer has given any documents : False True
+2016-10-06 19:38:21,657 - root - DEBUG - Checking for documents: [('CIBIL', 1)]
+2016-10-06 19:38:21,792 - root - DEBUG - Response for rendering documents on the LoansApp Portal{'CIBIL': 1}
+2016-10-06 19:41:34,345 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA89171490
+2016-10-06 19:41:34,388 - root - DEBUG - Customer ID fetched for Client fetching : LA89171490
+2016-10-06 19:41:34,529 - root - DEBUG - Success for map_customer_to_client module. Client ID: 74
+2016-10-06 19:42:09,013 - root - DEBUG - Success for fetch_customer_id module : Customer_id = LA89171490
+2016-10-06 19:42:09,023 - root - DEBUG - Customer ID fetched for Client fetching : LA89171490
+2016-10-06 19:42:09,153 - root - DEBUG - Success for map_customer_to_client module. Client ID: 74
+2016-10-06 19:42:54,680 - root - DEBUG - Success for map_customer_to_client module. Client ID: 74
+2016-10-06 19:44:34,425 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA89171490
+2016-10-06 19:44:34,971 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:44:34,972 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-06 19:45:34,489 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA90156888
+2016-10-06 19:45:35,532 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:45:35,533 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-06 19:46:01,922 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA89537767
+2016-10-06 19:46:02,433 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:46:02,433 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-06 19:50:16,686 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA96531860
+2016-10-06 19:50:16,924 - root - ERROR - Failure in prepare_customer_scorecard : Database Retrieval error : 'NoneType' object has no attribute 'strftime'
+2016-10-06 19:50:16,925 - root - DEBUG - Response for filtering customers based on Rule System: <Response 80 bytes [500 INTERNAL SERVER ERROR]>
+2016-10-06 19:50:38,287 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA31634871
+2016-10-06 19:50:38,664 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:50:38,665 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-06 19:51:12,313 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA32822683
+2016-10-06 19:51:12,812 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:51:12,813 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-06 19:52:25,715 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA33932929
+2016-10-06 19:52:26,215 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:52:26,216 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-06 19:53:11,403 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA47370525
+2016-10-06 19:53:11,905 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:53:11,906 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-06 19:54:00,826 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA16760959
+2016-10-06 19:54:01,100 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:54:01,100 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-06 19:54:28,479 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA21671408
+2016-10-06 19:54:28,968 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:54:28,968 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-06 19:54:57,648 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA89338614
+2016-10-06 19:54:58,469 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:54:58,470 - root - DEBUG - Response for filtering customers based on Rule System: <Response 770 bytes [200 OK]>
+2016-10-06 19:55:47,056 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA89163116
+2016-10-06 19:55:47,994 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:55:47,994 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-06 19:56:13,027 - root - DEBUG - Parameters for filtering customers based on Rule System: Customer ID - LA88555514
+2016-10-06 19:56:13,301 - root - DEBUG - Successfully created the decision map for the customer
+2016-10-06 19:56:13,301 - root - DEBUG - Response for filtering customers based on Rule System: <Response 730 bytes [200 OK]>
+2016-10-06 20:01:52,083 - root - DEBUG - Parameters passed for download_docs microservice: ImmutableMultiDict([('customer_id', u'LA68494527'), ('doc_id', u'KYC001')])
+2016-10-06 20:01:54,627 - root - DEBUG - File - PAN.pdf for LA68494527 downloaded successfully!

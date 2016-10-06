@@ -1,7 +1,9 @@
-from field_op_db import *
 from los_db import *
 from werkzeug.wrappers import Response
 from PIL import Image
+from status_codes import *
+from OTP_Settings import *
+from datetime import date
 import logging
 import logging.config
 import requests
@@ -10,6 +12,8 @@ import base64
 import urllib, urllib2
 import io
 import time
+import random
+import re
 
 # global variable definition
 docs_list = {}
@@ -33,6 +37,90 @@ month_map = {
 	"12":["december","dec"]
 }
 
+
+# prepare dendogram skeleton
+def prepare_dendogram_struct():
+	dendogram = {
+		"links": [
+		{
+		  "source": "Scored",
+		  "target": "Awaiting",
+		  "value": ""
+		},
+		{
+		  "source": "Scored",
+		  "target": "Approved",
+		  "value": ""
+		},
+		{
+		  "source": "Scored",
+		  "target": "Rejected",
+		  "value": ""
+		},
+		{
+		  "source": "Approved",
+		  "target": "Disbursed",
+		  "value": ""
+		}
+		],
+		"nodes": [
+		{
+		  "node": 1,
+		  "name": "Scored",
+		  "xPos": 0,
+		  "colour": "#DFE378"
+		},
+		{
+		  "node": 2,
+		  "name": "Awaiting",
+		  "xPos": 1,
+		  "colour": "#E37878"
+		},
+		{
+		  "node": 3,
+		  "name": "Approved",
+		  "xPos": 1,
+		  "colour": "#E3BE78"
+		},
+		{
+		  "node":4,
+		  "name": "Rejected",
+		  "xPos": 1,
+		  "colour": "grey"
+		},
+		{
+		  "node":5,
+		  "name": "Disbursed",
+		  "xPos": 2,
+		  "colour": "#78E37C"
+		},
+		{
+		  "node":6,
+		  "name": "Currently Scoring",
+		  "xPos": 0,
+		  "colour": "#7886E3"
+		},
+		{
+		  "node":7,
+		  "name": "Not Scored",
+		  "xPos": 0,
+		  "colour": "#78BEE3"
+		}
+		],
+		"extra_nodes": [
+		{
+		  "node_name":"Currently Scoring",
+		  "value":50
+		},
+		{
+		  "node_name":"Not Scored",
+		  "value":50
+		}
+	]
+	}
+	return dendogram
+
+# preparing the skeleton of the decision tree
 def prepare_json_obj(rules):
 	# making a scalable decision tree
 	rule_inc = 0
@@ -43,30 +131,38 @@ def prepare_json_obj(rules):
 	decision_payload["children"] = []
 	tree_data.append(decision_payload)
 
-	decision_payload = {}
-	decision_payload["name"] = result[1]
-	decision_payload["parent"] = rules[rule_inc]
-	tree_data.append(decision_payload)
+	# decision_payload = {}
+	# decision_payload["name"] = result[1]
+	# decision_payload["parent"] = rules[rule_inc]
+	# tree_data.append(decision_payload)
 
 	sub_tree = tree_data
 	rule_inc=rule_inc+1
 	
-	while (rule_inc < len(rules)):
+	while (rule_inc < len(rules)+1):
 		comp = []
-		child_obj = {}
-		child_obj["name"] = rules[rule_inc]
-		child_obj["parent"] = rules[rule_inc-1]
-		child_obj["children"] = []
-		comp.append(child_obj)
+		if rule_inc < len(rules):
+			child_obj = {}
+			child_obj["name"] = rules[rule_inc]
+			child_obj["parent"] = rules[rule_inc-1]
+			child_obj["children"] = []
+			comp.append(child_obj)
 
-		child_obj = {}
-		if rule_inc < len(rules)-1:
+			child_obj = {}
 			child_obj["name"] = result[1]
+			child_obj["parent"] = rules[rule_inc-1]
+			comp.append(child_obj)
 		else:
+			child_obj = {}
 			child_obj["name"] = result[0]
-		child_obj["parent"] = rules[rule_inc-1]
-		comp.append(child_obj)
-		
+			child_obj["parent"] = rules[rule_inc-1]
+			comp.append(child_obj)
+
+			child_obj = {}
+			child_obj["name"] = result[1]
+			child_obj["parent"] = rules[rule_inc-1]
+			comp.append(child_obj)
+
 		temp = sub_tree[0]
 		temp["children"] = (comp)
 		sub_tree = comp
@@ -74,30 +170,31 @@ def prepare_json_obj(rules):
 	return tree_data
 
 decision_map = prepare_json_obj(rules)
+# print decision_map
 
+# to retrieve the retailers' list for the loan officer on the home screen
 def fetch_retailers(field_op_id):
 	retailer_list = []
 	status_list = []
 	try:
 		check = session.query(exists().where(RetailerFieldOpMap.field_op_id == field_op_id))
-		print check
 		if check:
 			select_q1 = session.query(RetailerFieldOpMap.retailer_id).filter(RetailerFieldOpMap.field_op_id == field_op_id).all()
 			retailer_list = list(select_q1)
-
-			print retailer_list
-
 			if retailer_list:
 				try:
 					status_list = session.query(RetailerFieldOpMap.state).filter(RetailerFieldOpMap.field_op_id == field_op_id).all()
 				finally:
 					session.flush()
+			message = "Successful Request"
+			logging.debug("Fetched the list of retailers")
 	except Exception, e:
+		session.rollback()
 		logging.error("The query condition is not satisfied")
 		message = "MySQLDB error " + str(e)
-		print message
-	return retailer_list, status_list
+	return message,retailer_list, status_list
 
+# to store the details filled by a direct customer/retailer in the Loansapp form Activity
 def store_customer_details(data):
 
 	form_json = json.load(data.stream)
@@ -138,7 +235,6 @@ def store_customer_details(data):
 	data["msg"] = message
 	resp_data = json.dumps(data)
 
-	print str(resp_data)
 	resp = Response(resp_data, response_code)
 	return resp
 
@@ -227,6 +323,7 @@ def aadhaar_verify_inserdata(customer_count, kyc_data, file_id, aadhaar_no, cust
 			session_ng.commit()
 
 		except Exception,e:
+			session.rollback()
 			logging.error("aadhaar_otp_verify: Unable to update customer Aadhaar data")
 			logging.error(msg=e)
 			status_code= 511
@@ -255,12 +352,12 @@ def aadhaar_verify_inserdata(customer_count, kyc_data, file_id, aadhaar_no, cust
 def aadhaar_verify_info(aadhaar_kyc_info, customer_id, aadhaar_no):
 	# storing the KYC information
 	logging.debug(msg= "aadhaar_otp_verify: kyc info success")
-	print aadhaar_kyc_info["kyc"]["photo"]
+	# print aadhaar_kyc_info["kyc"]["photo"]
 	photo= base64.b64decode(aadhaar_kyc_info["kyc"]["photo"])
 
 	image = Image.open(io.BytesIO(photo))
 
-	print image
+	# print image
 	
 	# r_image= aadhaar_verify_uploadimage(photo, customer_id)
 	# r= json.loads(r_image.data)
@@ -280,6 +377,7 @@ def aadhaar_verify_info(aadhaar_kyc_info, customer_id, aadhaar_no):
 		return aadhaar_verify_inserdata(customer_count, kyc_data, file_id, aadhaar_no, customer_id, aadhaar_kyc_info)
 		
 	except Exception,e:
+		session.rollback()
 		logging.error("aadhaar_otp_verify: Error creating/updating EKYC object")
 		logging.error(msg=e)
 		status_code = 511
@@ -294,14 +392,14 @@ def aadhaar_verify_info(aadhaar_kyc_info, customer_id, aadhaar_no):
 
 def store_kyc(data):
 	kyc_data = data.stream.read()
-	print kyc_data
 
 	kyc_json = json.loads(kyc_data)
 	aadhaar_no = int(kyc_json["aadhaar-id"])
-	customer_id = 'DLC344'
+	# to be added as a parameter in the app
+	customer_id = fetch_customer_id(key, val)
 	return aadhaar_verify_info(kyc_json,customer_id,aadhaar_no)
 
-def execute_rule1(lid, edate):
+def execute_rule1(rid, edate):
 
 	# parsing the date
 	date_parts = edate.split('-')
@@ -310,210 +408,356 @@ def execute_rule1(lid, edate):
 	month_name = month_map[str(date_parts[1])]
 	year = int(date_parts[0])
 
-	txn_data = session.query(TransactionData).filter(TransactionData.customer_id == lid).all()
-	cnt_txn = 0
-	if year < 2016 or (month < 2 and year == 2016):
-		print "in old"
-		for txn in txn_data:
-			if cnt_txn < 3:
-				if txn.grand_total > 0:
-					cnt_txn = cnt_txn + 1
-					print txn.grand_total
-		if cnt_txn == 3:
-			print "Yes for Transaction Data"
-			return True
+	txn_data = session.query(TransactionData).filter(TransactionData.retailer_code == rid).all()
+	if txn_data:
+		cnt_txn = 0
+		if year < 2016 or (month < 2 and year == 2016):
+			for txn in txn_data:
+				if cnt_txn < 3:
+					if txn.grand_total > 0:
+						cnt_txn = cnt_txn + 1
+			if cnt_txn == 3:
+				return True
+		else:
+			idx = 0
+			for i in range(len(txn_data)):
+				if txn_data[i].month.lower() in month_name:
+					idx = i
+					break
+			for i in range(idx,len(txn_data)):
+				if cnt_txn < 3:
+					if txn_data[i].grand_total > 0:
+						cnt_txn = cnt_txn + 1
+			if cnt_txn == 3:
+				return True
 	else:
-		print "in new"
-		for i in range(month,len(txn_data)+1):
-			if cnt_txn < 3:
-				if txn.grand_total > 0:
-					cnt_txn = cnt_txn + 1
-		if cnt_txn == 3:
-			print "Yes for Transaction Data"
-			return True
+		logging.error("Retailer ID not found in Transaction Table")
 	return False
 
-def execute_rule2(lid, edate):
+def execute_rule2(rid, edate):
 
 	# parsing the date
 	date_parts = edate.split('-')
 	days = int(date_parts[2])
 	month = int(date_parts[1])
+	month_name = month_map[str(date_parts[1])]
 	year = int(date_parts[0])
 
-	sales_data = session.query(SalesData).filter(SalesData.customer_id == lid).all()
-	sales_amount = 0
+	sales_data = session.query(SalesData).filter(SalesData.retailer_code == rid).all()
+	sales_amount = 0.0
 	cnt_txn = 0
-	if year < 2016 or (month < 2 and year == 2016):
-		print "in old"
-		for txn in sales_data:
-			if cnt_txn < 3 and sales_amount < 550000:
-				if txn.grand_total > 0:
-					cnt_txn = cnt_txn + 1
-					sales_amount = sales_amount + txn.grand_total
-					print sales_amount
-		if sales_amount > 550000:
-			print("Yes for Sales>5.5L")
-			return True
+	if sales_data:
+		if year < 2016 or (month < 2 and year == 2016):
+			for txn in sales_data:
+				if cnt_txn < 3 and sales_amount < 550000:
+					if txn.grand_total > 0:
+						cnt_txn = cnt_txn + 1
+						sales_amount = sales_amount + float(txn.grand_total)
+			if sales_amount > 550000:
+				return True
+		else:
+			idx = 0
+			for i in range(len(sales_data)):
+				if sales_data[i].month.lower() in month_name:
+					idx = i
+					break
+			for i in range(idx,len(sales_data)):
+				if cnt_txn < 3:
+					if sales_data[i].grand_total > 0:
+						cnt_txn = cnt_txn + 1
+						sales_amount = sales_amount+float(sales_data[i].grand_total)
+			if sales_amount > 550000:
+				return True
 	else:
-		print "in new"
-		for i in range(month,len(sales_data)+1):
-			if cnt_txn < 3 and sales_amount < 550000:
-				if txn.grand_total > 0:
-					cnt_txn = cnt_txn + 1
-					sales_amount = sales_amount+txn.grand_total
-		if sales_amount > 550000:
-			print("Yes for Sales>5.5L")
-			return True
+		logging.error("Retailer ID does not exist in Sales Table")
 	return False
 
 def execute_rule3(edate):
 
 	# parsing the date field
-	print edate
 	parts = edate.split('-')
 	days = int(parts[2])
 	month = int(parts[1])
 	year = int(parts[0])
 
 	if year < 2016 or (month < 2 and year == 2016):
-		print "in old"
-		print "Yes for Retailer Vintage"
 		return True
 	else:
-		print "in new"
 		total_days = days
 		current_date = time.strftime("%d-%m-%y")
 		current_days = int(current_date.split('-')[0])
 		current_month = int(current_date.split('-')[1])
 		current_year = int(current_date.split('-')[2])
 		if current_year > year:
-			print "Yes for Retailer Vintage"
 			return True
 		else:
 			if current_month > month:
 				diff = current_month - month
 				approx_days = diff*30
 		total_days = total_days + approx_days
-		print total_days
 		if total_days > 180:
-			print "Yes for Retailer Vintage"
 			return True
 	return False
 
-def rule_based_filtering(la_id):
-	check_id = session.query(exists().where(CustomerDetails.customer_id==la_id)).scalar()
-	if check_id:
-		enroll_date = session.query(CustomerDetails.partner_enrollment_date).\
-			filter(MISData.customer_id==la_id).first()
-		enroll_date = str(enroll_date)
+def rule_based_filtering(cust_id):
+	dmap = []
+	try:
+		check_id = session.query(exists().where(CustomerDetails.Customer_id==cust_id)).scalar()
+		if check_id:
+			enroll_date = session.query(CustomerDetails.partner_enrollment_date).\
+				filter(CustomerDetails.Customer_id==cust_id).first()
+			retailer_code = session.query(AlliancePartner.unique_id).\
+				filter(AlliancePartner.Customer_id==cust_id).first()
+			session.commit()
 
-		dmap = decision_map
-		obj1 = dmap[0]
-		obj2 = dmap[1]
+			if enroll_date and retailer_code:
+				enroll_date = enroll_date[0].strftime('%Y-%m-%d')
+				rcode = retailer_code[0]
 
-		if execute_rule1(la_id, enroll_date) == True:
-			obj1["result"] = "success"
-			temp = obj1["children"]
-			sub_obj1 = temp[0]
-			sub_obj2 = temp[1]
-			obj1["children"] = []
-			if execute_rule2(la_id, enroll_date) == True:
-				sub_obj1["result"] = "success"
-				sub_temp = sub_obj1["children"]
-				sub_sub_obj1 = sub_temp[0]
-				sub_sub_obj2 = sub_temp[1]
-				sub_obj1["children"] = []
-				if execute_rule3(enroll_date) == True:
-					sub_sub_obj1["result"] = "success"
+				dmap = prepare_json_obj(rules)
+				fobj = dmap
+
+				if execute_rule1(rcode, enroll_date) == True:
+					fobj[0]["result"] = "passed"
+					sobj = fobj[0]["children"]
+
+					fobj[0]["children"] = []
+					if execute_rule2(rcode, enroll_date) == True:
+						sobj[0]["result"] = "passed"
+						tobj = sobj[0]["children"]
+
+						sobj[0]["children"] = []
+						
+						if execute_rule3(enroll_date) == True:
+							tobj[0]["result"] = "passed"
+							lobj = tobj[0]["children"]
+
+							tobj[0]["children"] = []
+							if tobj[0]["result"] == "passed":
+								lobj[0]["result"] = "passed"
+							else:
+								lobj[1]["result"] = "failed"
+							tobj[0]["children"] = lobj
+						else:
+							tobj[1]["result"] = "failed"
+						sobj[0]["children"] = tobj
+					else:
+						sobj[1]["result"] = "failed"
+					fobj[0]["children"] = sobj
 				else:
-					sub_sub_obj2["result"] = "failed"
-				sub_obj1["children"].append(sub_sub_obj1)
-				sub_obj1["children"].append(sub_sub_obj2)
-			else:
-				sub_obj2["result"] = "failed"
-			obj1["children"].append(sub_obj1)
-			obj1["children"].append(sub_obj2)
-		else:
-			obj2["result"] = "failed"
-		dmap.append(obj1)
-		dmap.append(obj2)
-		print dmap
-		return dmap
-	message = "Loansapp ID does not exist"
-	return message
+					fobj[0]["result"] = "failed"
+					fail_obj = fobj[0]["children"]
+					fobj[0]["children"] = []
+					fail_obj[1]["result"] = "failed"
 
-def filter_customers(la_id):
+					fobj[0]["children"] = fail_obj
+				dmap = fobj
+				data = {
+				'status_code' : SUCCESS_RULE_FILTER,
+				'response_code' :  200,
+				'message' : "Success in applying the rule filter",
+				'tree_map': dmap
+				}
+			else:
+				data = {
+					'status_code': 500,
+					'response_code':500,
+					'message':"Retailer Code/Enrollment Date not found"
+				}
+			logging.debug("Successfully created the decision map for the customer")	
+			return data
+	except Exception, e:
+		session.rollback()
+		data = {
+			'status_code':DATABASE_ERROR,
+			'response_code':500,
+			'message':"Database Retrieval error",
+			'tree_map': dmap
+		}
+		logging.error("Failure in prepare_customer_scorecard : Database Retrieval error"+" : "+str(e))
+		return data
+	data = {
+		'status_code' : FAILURE_RULE_FILTER,
+		'response_code' :  500,
+		'message' : "Customer ID does not exist",
+		'tree_map':dmap,
+	}
+	logging.debug("Failure in creating Decision Tree: Customer does not exist")
+	return data
+
+def prepare_rule_scorecard(cust_id):
 	message = ""
-	if len(la_id) is not 10:
+	if len(cust_id) is not 10:
 		message = "Invalid ID entered. Please check credentials."
+		logging.error(message)
+		response_code = 500
+		status_code = INVALID_CUSTOMER_ID
+		tree_map = None
 	else:
-		message = rule_based_filtering(la_id)
+		message = rule_based_filtering(cust_id)
 	return message
 
 def fetch_customer_id(key, val):
-	response_code = 400
+	response_code = 500
 	la_id = ''
 	check_id = False
-	print key
-	print val
+
 	try:
-		if key == "alternate_mobile":
+		if key == "mobileNO":
 			check_id = session.query(exists().where(CustomerDetails.mobile_no == val)).scalar()
-		elif key == "retailer_code":
+			session.commit()
+		elif key == "retailer_id":
 			check_id = session.query(exists().where(AlliancePartner.unique_id == val)).scalar()
+			session.commit()
 		if check_id == True:
-			if key == "alternate_mobile":
+			if key == "mobileNO":
 				lid = session.query(CustomerDetails.Customer_id).filter(CustomerDetails.mobile_no == val).first()
-			elif key == "retailer_code":
+			elif key == "retailer_id":
 				lid = session.query(AlliancePartner.Customer_id).filter(AlliancePartner.unique_id== val).first()
-			print la_id
-			message = 'Fetched data successfully!'
+			session.commit()
+			
+			message = 'Success in retrieving the customer ID for the details provided'
 			response_code = 200
-			la_id = lid
+			status_code = SUCCESS_CUSTOMER_ID
+			la_id = lid[0]
+			logging.debug("Success for fetch_customer_id module : Customer_id = "+la_id)
+			
 		else:
-			logging.error("Invalid ID provided. Please provide correct information")
-			message = 'Customer not found in the database. Please check the information provided'
+			message = "Customer with " +key +" "+str(val)+" not found in the database. Please check the information provided"
+			logging.error(message)
 			la_id = 'NA'
-			response_code = 505
+			response_code = 500
+			status_code = BASIC_DETAIL_ERROR
 	except Exception, e:
-		logging.error("MySQLDB error : "+str(e))
-		message = "Database error"
+		session.rollback()
+		message = "Database Retrieval error"
+		logging.error("Failure in fetch_customer_id module: "+message+" : "+str(e))
 		la_id='NA'
-		response_code=511
+		response_code=DATABASE_RETRIEVAL_ERROR
 	payload = {}
 	payload["msg"] = message
-	payload["response"]=response_code
+	payload["status"]=response_code
 	payload["customer_id"] = la_id
-	return payload
+
+	return response_code,payload
+
+def map_customer_client(customer_id):
+	client_id = 'NA'
+	if customer_id == 'NA':
+		message = "Customer with the ID " +str(customer_id) +" doesn't exist. Please check the information and try again"
+		response_code = 500
+		status_code = CUSTOMER_ID_ERROR
+	else:
+		try:
+			cid = session.query(CustomerLoanMap.client_id).\
+				filter(CustomerLoanMap.Customer_id == customer_id).first()
+			if client_id:
+				client_id = cid[0]
+				session.commit()
+				response_code = 200
+				status_code = SUCCESS_CLIENT_ID
+				message = 'Success on Retrieving Client ID'
+				logging.debug("Success for map_customer_to_client module. Client ID: "+str(client_id))
+			else:
+				client_id = 'NA'
+				response_code = 500
+				status_code = CLIENT_ID_ERROR
+				message = 'Failed to Retrieving a valid/existing client ID'
+		except Exception, e:
+			session.rollback()
+			client_id = 'NA'
+			response_code = 500
+			status_code = DATABASE_ERROR
+			message = "Database Retrieval error"
+			logging.error(message+" : "+str(e))
+	return message,response_code,status_code,client_id
 
 def fetch_client_info(key, val):
 	message = ''
-	response = 400
-	status_code = 201
+	status_code = 500
 	client_id = 'NA'
-	result = fetch_customer_id(key, val)
-	if result["customer_id"] == 'NA':
-		message = "No such customer exists. Please check the information entered"
-		response = 500
-		status_code = 505
-	else:
-		try:
-			cid = session.query(CustomerLoanMapping.client_id).\
-				filter(CustomerLoanMapping.customer_id == result["la_id"]).first()
-			client_id = cid
-			response = 200
-			status_code = 201
-			message = 'Successfully received the details'
-		except Exception, e:
-			logging.error("MySQLDB error: "+str(e))
-			client_id = cid
-			response = 500
-			status_code = 511
-			message = "Database error: Try again after sometime"
+	[_,result] = fetch_customer_id(key, val)
+
+	# map the key received in the request object to the customer_id
+	logging.debug("Customer ID fetched for Client fetching : "+result["customer_id"])
+	[message, response_code, status_code, client_id] = map_customer_client(result["customer_id"])
+	
 	data = {}
 	data["msg"] = message
-	data["response"] = response
 	data["status"] = status_code
 	data["client_id"] = client_id
-	return data
+	return response_code,data
+
+# Method to generate OTP
+def generate_otp(mobile_no):
+	route = "7"
+
+	# generate a random 6-digit number
+	otp = random.randint(100000, 999999)
+	text = sms_text + str(otp)
+
+	# generating the URL to be requested with appropriate parameters
+	SMS_URL = "http://login.smsgatewayhub.com/api/mt/SendSMS?APIKey=" + SMS_GATEWAY_API_KEY + \
+		"&senderid=" + sender_id + "&channel=" + channel + "&DCS=" + DCS + "&flashsms=" + flash_sms + \
+		"&number=" + str(mobile_no) + "&text=" + text + "&route=" + route
+
+
+	# Requesting the SMS Gateway Hub URL for sending the OTP
+	resp = requests.get(SMS_URL)
+	r = json.loads(resp.text)
+	logging.debug("SMSGateway Payload : "+str(r))
+
+	# wait for the delivery report to be created
+	# time.sleep(5)
+	# DELIVERY_URL = "http://www.smsgatewayhub.com/api/mt/GetDelivery?APIKey="+SMS_GATEWAY_API_KEY +\
+	# 	"&jobid=" + r["JobId"]
+	# delivery_resp = requests.get(DELIVERY_URL)
+	# del_r = json.loads(delivery_resp.text)
+	# report = del_r["DeliveryReports"][0]
+	# logging.debug("Delivery Report : "+report)
+
+	if r["ErrorCode"] == "000":
+		status_code = 200
+		data = {"message": "OTP sent successfully!", "status": status_code, "content_type": "application/json"}
+		data_json = json.dumps(data)
+		resp = Response(data_json, 200)
+		return resp
+	
+	logging.error("OTP_Error: OTP sending failed")
+	status_code = 500
+	data = {"message": "OTP not sent! Please check mobile number", \
+		"status": status_code, "content_type": "application/json"}
+	data_json = json.dumps(data)
+	resp = Response(data_json, 500)
+	return resp
+
+def update_age(customer_id):
+	try:
+		cust_check = session.query(exists().where(CustomerDetails.Customer_id==customer_id)).scalar()
+		session.commit()
+		if cust_check:
+			dob = session.query(CustomerDetails.date_of_birth).filter(CustomerDetails.Customer_id==customer_id).first()
+			session.commit()
+			dob = dob[0]
+			if dob != None:
+				today = date.today()
+				age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+				session.query(CustomerDetails).with_lockmode('update').\
+					filter(CustomerDetails.Customer_id==customer_id).\
+					update({"age":age})
+				session.commit()
+			else:
+				age = ""
+			return age
+		else:
+			logging.error("Unable to update age: Customer does not exist")
+			return None
+	except Exception, e:
+		if 'mysql' in str(e).lower():
+			session.rollback()
+		logging.error("An error occurred : "+str(e))
+	return None
+
+
+
+		

@@ -1,4 +1,4 @@
 interfaces:
     FOSWeb:
-        class: field_op_web:FieldOpWeb
+        class: los_web:LosWeb
         port: 4080

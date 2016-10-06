@@ -17,7 +17,6 @@ def generate_la_id():
 	while same_flag == True:
 		num = random.randrange(10000000,99999999)
 		code = prefix + str(num)
-		print code
 		sel_code = session.query(exists().where(CustomerDetails.Customer_id == code)).scalar()
 		if not sel_code:
 			same_flag = False
